@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom properties</title>
+    <!-- css 에서의 변수를 선언하는 법 -->
+    <!-- media 쿼리에서 빛을 발함 -->
+    <style>
+        :root{
+            /* 변수 선언시 -- 사용 */
+            --background-color: thistle;
+            --text-color:whitesmoke;
+            --base-space:8px;
+        }
+
+        .First_list{
+            /* 변수 사용시 var() 사용 */
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin-left: var(--base-space,8);
+            /* 변수 선언이 되지 않았을시 기본값은 8 */
+        }
+        .Second_list{
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin-left: calc(var(--base-space)*2); 
+            /* 수학적 계산을 할때는 calc()로 감싸기 */
+        }
+        
+        @media screen and (max-width:768px) {
+            :root{
+            /* 최대 크기가 768까지는 살몬색 */
+            --background-color: salmon;
+            --text-color:blue;
+            --base-space:4px;
+        }
+            
+        }
+    </style>
+        
+</head>
+<body>
+    <ul class="First_list">
+        <li>Orange</li>
+        <li>Apple</li>
+    </ul>
+    <ul class="Second_list">
+        <li>Korea</li>
+        <li>Japan</li>
+        <li>China</li>
+    </ul>
+</body>
+</html>
