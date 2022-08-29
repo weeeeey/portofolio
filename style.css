@@ -260,4 +260,22 @@ button{
 }
 
 /* Contact */
-
+#contact{
+    background-color: var(--color-pink);
+}
+.contact__title,
+.contact__email,
+.contact__rights{
+    color: var(--color-white);
+}
+.contact__links{
+    font-size: var(--font-large);
+    margin: 24px 0;
+    transition: all var(--animation-duration);
+}
+.contact__links .gitcon:hover {
+    transform: scale(1.1);
+}
+.contact__links .velcon:hover {
+    transform: scale(1.1);
+}
