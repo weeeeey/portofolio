@@ -1,4 +1,6 @@
 /* Global */
+/* root 키워드를 통해 변수들을 선언 및 할당 */
+/* root 뿐만 아니라 특정 태그를 통해 변수를 선언 후 해당 태그에 소속된 태그들에 변수 사용 가능(영영 밖 태그에서는 할당x) */
 :root {
     /* Color */
     --color-white: #ffffff;
@@ -25,14 +27,33 @@
     --weight-bold: 700;
     --weight-semi-bold: 600;
     --weight-regular: 400;
+
+    /* Size */
+    --size-border-radius: 4px;
 }
 
 /* Universal tags */
 *{
     box-sizing: border-box;
 }
-  /* Typography */
 
+body{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+a{
+    text-decoration: none;
+    color: var(--color-white);
+}
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+li{
+    list-style: none;
+}
+/* Typography */
+/* 루트에서 할당한 변수들을 var 함수를 통해 대입시키기 */
 h1 {
     font-size: var(--font-large);
     font-weight: var(--weight-bold);
@@ -59,4 +80,36 @@ p {
     font-weight: var(--weight-regular);
     color: var(--color-black);
     margin: 4px 0;
+}
+
+/* Navbar */
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: var(--color-pink);
+}
+.navbar__menu{
+    display: flex;
+
+}
+.navbar__logo{
+    font-size: var(--font-medium);
+    font-weight: var(--weight-semi-bold);
+    color: white;
+}
+.navbar__menu__item{
+    padding: 8px 12px;
+    margin: 0 4px;
+    color: var(--color-white);
+    cursor: pointer;
+}
+.navbar__menu__item.active{
+    border: 1px solid white;
+    border-radius: var(--size-border-radius);
+}
+.navbar__menu__item:hover{
+    background-color: var(--color-dark-pink);
+    border-radius: var(--size-border-radius);
 }
